@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+  .btn {
+    position: relative;
+  }
+  .btn::before {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+
+  .btn:hover::before {
+    background-color: blue;
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+
+  }
+  .btn::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    inset: 0 0 0 0;
+    background: rgb(0, 0, 0);
+    z-index: -1;
+    transition: transform 0.3s ease;
+  }
+
+
